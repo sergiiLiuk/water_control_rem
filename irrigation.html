@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Water Control Remote</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/logo-nav.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="http://placehold.it/300x60?text=Logo" width="150" height="30" alt="">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item ">
+                    <div class="pick-water-controller">
+                        <label for="">Water control</label>
+                        &nbsp;
+                        <select class="selectpicker">
+                            <optgroup>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </li>
+                &nbsp; &nbsp;
+                <li class="nav-item ">
+                    <a class="nav-link" href="setup.html">Setup</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <hr>
+    <div class="container">
+
+        <div class="row align-items-center justify-content-center">
+            <div class="col-xs-10 col-md-10 text-center">
+                <div class="station-status">
+                    <label for="station-status">Status: </label>
+                    &nbsp; &nbsp;
+                    <label id="station-status"></label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 ">
+                <div class="program">
+                    <div class="row">
+                        <div class="col-station-numb col-md-2">
+                            <span class="align-middle">Program A</span>
+                        </div>
+                        <div class="col-progress-bar col-md-10 text-right">
+                            <div id="bar-holder">
+                                <div id="progressBar">10%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-start-time text-right text-xs-center col-sm-offset-0 text-sm-right col-md-2 text-md-left offset-md-2">
+                            <span class="align-middle">15:15</span>
+                        </div>
+                        <div class="col-end-time col-md-10 text-right">
+                            <span class="align-middle">15:25</span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="station">
+                    <div class="row">
+                        <div class="col-station-numb col-md-2">
+                            <span class="align-middle">Station 3</span>
+                        </div>
+                        <div class="col-progress-bar col-md-10 text-right">
+                            <div id="bar-holder">
+                                <div id="progressBar">10%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-start-time text-right text-xs-center col-sm-offset-0 text-sm-right col-md-2 text-md-left offset-md-2">
+                            <span class="align-middle">15:17</span>
+                        </div>
+                        <div class="col-end-time col-md-10 text-right">
+                            <span class="align-middle">15:22</span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="col-xs-10 col-md-12 text-center">
+                    <div class="form-group">
+                        <button type="submit" class="btn stop" id="stop" onclick="move()">Stop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <!-- /.container -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

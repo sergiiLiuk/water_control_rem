@@ -1,0 +1,75 @@
+body {
+    height: 700px;
+    font-family: Arial;
+    background-color: rgb(218, 218, 218);
+}
+
+.btn {
+    color: #333333;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px 30px;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    float: none;
+}
+.btn.stop{
+    background-color: rgb(206, 67, 57);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.btn.start, .store{
+    background-color: rgb(12, 143, 44);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.pick-water-controller {
+    padding: 8px 0 0 0;
+}
+
+#progressBar {
+    width: 10%;
+    height: 30px;
+    background-color: rgb(64, 110, 194);
+    border-radius: 20px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+#bar-holder {
+    background-color: rgb(139, 139, 139);
+    border-radius: 20px;
+}
+
+.col-start-time {
+    width: 40%;
+}
+
+.col-end-time {
+    width: 60%;
+}
+
+.col-station-numb {
+    width: 30%;
+}
+
+.col-progress-bar {
+    width: 70%;
+}
+
+.col-man-prog {
+    width: 40%;
+}
+
+/*
+.col-pick-prog {
+    width: 40%;
+}
+
+.col-pick-lab{
+    width: 20%;
+}
+*/
+ 
