@@ -23,39 +23,26 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="http://placehold.it/300x60?text=Logo" width="150" height="30" alt="">
+            <img src="img/testlogo.png" width="100" height="45" alt="">
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto ">
-                <li class="nav-item ">
-                    <div class="pick-water-controller">
-                        <label for="">Water control</label>
-                        &nbsp;
-                        <select class="selectpicker">
-                            <optgroup>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                            </optgroup>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto ">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="setup.html">Setup</a>
+                        <label for="water_control">Water control</label> &nbsp;&nbsp;
+                        <select id='water_control'>
                         </select>
-                    </div>
-                </li>
-                &nbsp; &nbsp;
-                <li class="nav-item ">
-                    <a class="nav-link" href="setup.html">Setup</a>
-                </li>
-            </ul>
-        </div>
+                    </li>
+                    &nbsp; &nbsp;
+
+                </ul>
+            </div>
     </nav>
+    <br>
     <br>
     <br>
     <hr>
@@ -64,9 +51,11 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-xs-10 col-md-10 text-center">
                 <div class="station-status">
-                    <label for="station-status">Status: </label>
+                    <label for="single_stat_status">
+                        <strong>Status:</strong>
+                    </label>
                     &nbsp; &nbsp;
-                    <label id="station-status"></label>
+                    <label id="single_stat_status"></label>
                 </div>
             </div>
         </div>
@@ -81,7 +70,10 @@
             <div class="col-xs-12 col-sm-12 col-md-12 ">
                 <div class="row">
                     <div class="col-station-numb col-md-2">
-                        <span class="align-middle">Station 3</span>
+                        <strong>
+                            <span id="station" class="align-middle">
+                            </span>
+                        </strong>
                     </div>
                     <div class="col-progress-bar col-md-10 text-right">
                         <div id="bar-holder">
