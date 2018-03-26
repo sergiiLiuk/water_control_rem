@@ -52,3 +52,10 @@ input {
 #navbarNavDropdown>ul>li {
     text-align: right;
 }
+
+.col-start-t{
+    width: 50%;
+}
+.col-end-t{
+    width: 50%;
+}

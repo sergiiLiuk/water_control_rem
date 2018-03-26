@@ -6,8 +6,11 @@
 
  var selected_station = '';
 
+ var logged = localStorage.getItem("logged");
 
  $(document).ready(function () {
+
+
 
    selected_station = localStorage.getItem("selectedStation");
 
@@ -56,12 +59,12 @@
  $("#station_status").text("Single station active");
  $("#future_program").text("(Program C, tomorrow, 9:45 - 10:00)");
 
-
+ // ------------------ Irrigation page -----------------------
+ // On stop click
  var width = 10;
 
- function move() {
+ function stopIrrigation() {
    var elem = document.getElementById("progressBar");
-
    // var id = setInterval(frame, 1);
    elem.style.width = width + '%';
    elem.innerHTML = width * 1 + '%';
@@ -76,9 +79,23 @@
        elem.innerHTML = width * 1 + '%';
      }
    }
+
+   location.href = "index.html"
  }
 
- // ------------------ Index (Ready) Page ------------------------
+ // ------------------- Login page -------------------------------
+ $('#login-form').click(function () {
+   location.href = "index.html"
+   //localStorage.setItem("true", logged);
+ });
+
+  // ------------------- Registration page -------------------------------
+  $('#registration-form').click(function () {
+    location.href = "index.html"
+    
+  });
+
+ // ------------------ Index (Ready) page ------------------------
 
  // Manual program entry data
  var items = ["A", "B", "C", "D", "E"];

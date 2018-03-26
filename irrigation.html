@@ -22,30 +22,34 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-                <img src="img/testlogo.png" width="100" height="45" alt="">
-            </a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ml-auto ">
-                        <li class="nav-item ">
-                            <a class="nav-link" href="setup.html">Setup</a>
-                            <label for="water_control">Water control</label> &nbsp;&nbsp;
-                            <select id='water_control'>
-                            </select>
-                        </li>
-                        &nbsp; &nbsp;
-    
-                    </ul>
+        <a class="navbar-brand" href="#">
+            <img src="img/testlogo.png" width="200" height="80" alt="">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto ">
+                <div class="row">
+                    <div class="text-right col-lg-6">
+                        <a class="nav-link" href="setup.html">Setup</a>
+                    </div>
+                    <div class="text-right col-lg-6">
+                        <a class="nav-link" href="">Logout</a>
+                        <label for="water_control">Water control</label> &nbsp;&nbsp;
+                        <select id='water_control'>
+                        </select>
+                    </div>
                 </div>
-        </nav>
-        <br>
-        <br>
-        <br>
-        <hr>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
     <div class="container">
 
         <div class="row align-items-center justify-content-center">
@@ -69,7 +73,10 @@
                 <div class="program">
                     <div class="row">
                         <div class="col-station-numb col-md-2">
-                            <span class="align-middle">Program A</span>
+                            <strong>
+                                <span id="program" class="align-middle">Program -
+                                </span>
+                            </strong>
                         </div>
                         <div class="col-progress-bar col-md-10 text-right">
                             <div id="bar-holder">
@@ -79,11 +86,11 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-start-time text-right text-xs-center col-sm-offset-0 text-sm-right col-md-2 text-md-left offset-md-2">
-                            <span class="align-middle">15:15</span>
+                        <div class="col-start-t col-sm-6 col-md-2 text-md-left offset-md-2">
+                            <span class="align-middle">15:17</span>
                         </div>
-                        <div class="col-end-time col-md-10 text-right">
-                            <span class="align-middle">15:25</span>
+                        <div class="col-end-t col-sm-6 col-md-8 text-right">
+                            <span class="align-middle">15:22</span>
                         </div>
                     </div>
                 </div>
@@ -95,7 +102,11 @@
                 <div class="station">
                     <div class="row">
                         <div class="col-station-numb col-md-2">
-                            <span class="align-middle">Station 3</span>
+                            <strong>
+                                <span id="station" class="align-middle">
+                                    Station -
+                                </span>
+                            </strong>
                         </div>
                         <div class="col-progress-bar col-md-10 text-right">
                             <div id="bar-holder">
@@ -105,10 +116,10 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-start-time text-right text-xs-center col-sm-offset-0 text-sm-right col-md-2 text-md-left offset-md-2">
+                        <div class="col-start-t col-sm-6 col-md-2 text-md-left offset-md-2">
                             <span class="align-middle">15:17</span>
                         </div>
-                        <div class="col-end-time col-md-10 text-right">
+                        <div class="col-end-t col-sm-6 col-md-8 text-right">
                             <span class="align-middle">15:22</span>
                         </div>
                     </div>
@@ -121,7 +132,7 @@
                 <br>
                 <div class="col-xs-10 col-md-12 text-center">
                     <div class="form-group">
-                        <button type="submit" class="btn stop" id="stop" onclick="move()">Stop</button>
+                        <button type="submit" class="btn stop" onclick="stopIrrigation()">Stop</button>
                     </div>
                 </div>
             </div>
