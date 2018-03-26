@@ -6,11 +6,11 @@
 
  var selected_station = '';
 
- var logged = localStorage.getItem("logged");
+ $("#station_status").text("Single station active");
+ $("#future_program").text("(Program C, tomorrow, 9:45 - 10:00)");
+
 
  $(document).ready(function () {
-
-
 
    selected_station = localStorage.getItem("selectedStation");
 
@@ -32,9 +32,7 @@
 
  });
 
-
-
-
+ // ------------------ Setup page -----------------------
 
  $('#store').on('click', function () {
    var water_contr_1 = $('#water_contr_1').val();
@@ -56,16 +54,19 @@
    alert('start-man-prog" is: ' + pick_prog);
  });
 
- $("#station_status").text("Single station active");
- $("#future_program").text("(Program C, tomorrow, 9:45 - 10:00)");
+ // ------------------ Single-station page -------------- 
+ function stopSingleStation() {
+   alert('Station Stoped');
+   location.href = "index.html"
+ }
 
  // ------------------ Irrigation page -----------------------
  // On stop click
- var width = 10;
+ var width = 20;
 
- function stopIrrigation() {
+ function testBar() {
    var elem = document.getElementById("progressBar");
-   // var id = setInterval(frame, 1);
+   var id = setInterval(frame, 1);
    elem.style.width = width + '%';
    elem.innerHTML = width * 1 + '%';
    width++;
@@ -79,6 +80,10 @@
        elem.innerHTML = width * 1 + '%';
      }
    }
+   width = 20;
+ }
+
+ function stopIrrigation() {
 
    location.href = "index.html"
  }
@@ -89,13 +94,13 @@
    //localStorage.setItem("true", logged);
  });
 
-  // ------------------- Logout -------------------------------
+ // ------------------- Logout -------------------------------
 
-  // ------------------- Registration page -------------------------------
-  $('#registration-form').click(function () {
-    location.href = "index.html"
-    
-  });
+ // ------------------- Registration page -------------------------------
+ $('#registration-form').click(function () {
+   location.href = "index.html"
+
+ });
 
  // ------------------ Index (Ready) page ------------------------
 
