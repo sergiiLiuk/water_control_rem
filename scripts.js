@@ -89,6 +89,8 @@
    //localStorage.setItem("true", logged);
  });
 
+  // ------------------- Logout -------------------------------
+
   // ------------------- Registration page -------------------------------
   $('#registration-form').click(function () {
     location.href = "index.html"
