@@ -6,34 +6,29 @@
 
  var selected_station = '';
 
- $("#station_status").text("Single station active");
- $("#future_program").text("(Program C, tomorrow, 9:45 - 10:00)");
-
-
  $(document).ready(function () {
 
-   selected_station = localStorage.getItem("selectedStation");
+   //selected_station = localStorage.getItem("selectedStation");
 
-   switch (selected_station) {
-     case '1':
-       $('#station').text('Station: ' + selected_station);
-       break;
-     case '2':
-       $('#station').text('Station: ' + selected_station);
-       break;
-     case '3':
-       $('#station').text('Station: ' + selected_station);
-       $('#single_stat_status').text('Single status active');
-       break;
+   /* switch (selected_station) {
+      case '1':
+        $('#station').text('Station: ' + selected_station);
+        break;
+      case '2':
+        $('#station').text('Station: ' + selected_station);
+        break;
+      case '3':
+        $('#station').text('Station: ' + selected_station);
+        $('#single_stat_status').text('Single status active');
+        break;
 
-     default:
+      default:
 
-   }
+    }*/
 
  });
 
  // ------------------ Setup page -----------------------
-
  $('#store').on('click', function () {
    var water_contr_1 = $('#water_contr_1').val();
    var water_contr_2 = $('#water_contr_2').val();
@@ -49,47 +44,8 @@
    location.href = "index.html"
  });
 
- $('#start_station').on('click', function () {
-   var pick_prog = $('#pick_prog').val();
-   alert('start-man-prog" is: ' + pick_prog);
- });
-
- // ------------------ Single-station page -------------- 
- function stopSingleStation() {
-   alert('Station Stoped');
-   location.href = "index.html"
- }
-
- // ------------------ Irrigation page -----------------------
- // On stop click
- var width = 20;
-
- function testBar() {
-   var elem = document.getElementById("progressBar");
-   var id = setInterval(frame, 1);
-   elem.style.width = width + '%';
-   elem.innerHTML = width * 1 + '%';
-   width++;
-
-   function frame() {
-     if (width >= 100) {
-       clearInterval(id);
-     } else {
-       width++;
-       elem.style.width = width + '%';
-       elem.innerHTML = width * 1 + '%';
-     }
-   }
-   width = 20;
- }
-
- function stopIrrigation() {
-
-   location.href = "index.html"
- }
-
  // ------------------- Login page -------------------------------
- $('#login-form').click(function () {
+ $('#login').click(function () {
    location.href = "index.html"
    //localStorage.setItem("true", logged);
  });
@@ -97,14 +53,22 @@
  // ------------------- Logout -------------------------------
 
  // ------------------- Registration page -------------------------------
- $('#registration-form').click(function () {
+ $('#registration').click(function () {
    location.href = "index.html"
 
  });
 
  // ------------------ Index (Ready) page ------------------------
+ // Water control entry data
+ for (i = 1; i <= 8; i++) {
+   $('#water_control').append($('<option>', {
+     value: i,
+     text: i
+   }));
+ }
+ // Future program label
+ $("#future_program").text("(Program C, tomorrow, 9:45 - 10:00)");
 
- // Manual program entry data
  var items = ["A", "B", "C", "D", "E"];
 
  $.each(items, function (index, value) {
@@ -114,7 +78,8 @@
    }));
  });
 
- // On click manual program 
+ // Makes server send START MANUAL PROGRAM command on serial port
+ // Makes server send START MANUAL STATION command on serial port
  $('#start_prog').on('click', function () {
    var selected_prog = $('#man_program').find(":selected").text();
    if (selected_prog === "-") {
@@ -124,15 +89,7 @@
    }
  });
 
- // Water control entry data
- for (i = 1; i <= 8; i++) {
-   $('#water_control').append($('<option>', {
-     value: i,
-     text: i
-   }));
- }
-
- // Manual station entry data
+ // Generates manual station entry data
  for (i = 1; i <= 20; i++) {
    $('#man_stat').append($('<option>', {
      value: i,
@@ -140,7 +97,7 @@
    }));
  }
 
- // Manual station time entry data
+ // Generates manual station time entry data
  for (i = 1; i <= 59; i++) {
    $('#man_stat_time').append($('<option>', {
      value: i,
@@ -162,6 +119,46 @@
      alert("Selected station: '" + man_statiom + "', " + "Selected time: '" + time + "'");
      selected_station = man_statiom;
      localStorage.setItem("selectedStation", selected_station);
-     location.href = "single-station.html"
+     location.href = "running.html"
    }
  });
+
+ // ------------------ Running page -------------- 
+ $('#stopManualStation').click(function () {
+   location.href = "index.html"
+   //localStorage.setItem("true", logged);
+ });
+
+ // Station status label  
+ $("#station_status").text("Single station active");
+ selected_station = localStorage.getItem("selectedStation");
+ $('#station').text('Station: ' + selected_station);
+
+
+ // Test progress bar
+ var width = 20;
+
+ function testBar() {
+   var elem = document.getElementById("progressBar");
+   var id = setInterval(frame, 1);
+   elem.style.width = width + '%';
+   elem.innerHTML = width * 1 + '%';
+   width++;
+
+   function frame() {
+     if (width >= 100) {
+       clearInterval(id);
+     } else {
+       width++;
+       elem.style.width = width + '%';
+       elem.innerHTML = width * 1 + '%';
+     }
+   }
+   width = 20;
+ }
+
+ // ------------------ Irrigation page -----------------------
+ function stopIrrigation() {
+
+   location.href = "index.html"
+ }
